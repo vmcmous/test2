@@ -173,27 +173,4 @@ Review the information for both markets on all four attributes, then choose one 
 <p>Please briefly explain your decision:</p>
 <textarea name="reason" rows="5" cols="50"></textarea>
 
-<!--END postHTML--><INPUT type="submit" value="Next Page" onClick=timefunction('submit','submit','submit')>
-</FORM>
-
-<script>
-document.forms['mlwebform'].addEventListener('submit', function(e) {
-    var market_choice = document.querySelector('input[name="market_choice"]:checked');
-    var reason = document.querySelector('textarea[name="reason"]').value;
-    
-    if (window.parent !== window) {
-        window.parent.postMessage({
-            type: 'mouselabComplete',
-            data: {
-                choice: market_choice ? market_choice.value : '',
-                reason: reason,
-                processData: document.forms['mlwebform'].elements['procdata'].value,
-                csvData: document.forms['mlwebform'].elements['procdata'].value
-            }
-        }, '*');
-    }
-});
-</script>
-
-</body>
-</html>
+<!--END postHTML--><INPUT type="submit" value="Next Page" onClick=timefunction('submit','submit','submit')></FORM></body></html>
